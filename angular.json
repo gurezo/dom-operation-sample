@@ -107,5 +107,8 @@
       }
     }
   },
-  "defaultProject": "dom-operation-sample"
+  "defaultProject": "dom-operation-sample",
+  "cli": {
+    "analytics": false
+  }
 }
