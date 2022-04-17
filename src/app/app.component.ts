@@ -16,6 +16,7 @@ import { ButtonComponent } from "./button/button.component";
 })
 export class AppComponent implements OnInit, AfterViewInit {
   title = "dom-operation-sample";
+  ButtonColor = ButtonColor;
   buttonConfig: ButtonConfig[] = [
     {
       color: ButtonColor.primary,
@@ -40,8 +41,7 @@ export class AppComponent implements OnInit, AfterViewInit {
   }
 
   private test() {
-    const appButtons =
-      this.el.nativeElement.querySelectorAll("app-button[color]");
+    const appButtons = this.el.nativeElement.querySelectorAll("button");
     console.log(
       "%cCheck!",
       "font-size: 100px; color: blue; font-weight: bold",
@@ -64,7 +64,8 @@ export class AppComponent implements OnInit, AfterViewInit {
       console.log("appButton", appButton);
 
       // if (!appButton.buttonConfig?.color) {
-      //   appButton.removeAttribute("color");
+      //   // appButton.ATTRIB
+      //   // appButton.removeAttribute("color");
       // }
     });
     // this.buttonConfig.forEach((item) => {});
