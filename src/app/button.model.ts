@@ -4,6 +4,6 @@ export enum ButtonColor {
 }
 
 export interface ButtonConfig {
-  color?: ButtonColor;
+  color: ButtonColor | undefined;
   label: string;
 }

@@ -1,7 +1,9 @@
-.primary {
-  background-color: aqua;
-}
+:host {
+  .primary {
+    background-color: aqua;
+  }
 
-.secondrary {
-  background-color: blueviolet;
+  .secondrary {
+    background-color: blueviolet;
+  }
 }

@@ -2,7 +2,9 @@
 
 <div>
   <app-button
+    #appBtn
     [buttonConfig]="item"
+    [color]="item?.color"
     *ngFor="let item of buttonConfig"
   ></app-button>
 </div>

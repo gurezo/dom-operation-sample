@@ -1,5 +1,13 @@
-import { AfterViewInit, Component, ElementRef, OnInit } from "@angular/core";
+import {
+  AfterViewInit,
+  Component,
+  ElementRef,
+  OnInit,
+  QueryList,
+  ViewChildren,
+} from "@angular/core";
 import { ButtonColor, ButtonConfig } from "./button.model";
+import { ButtonComponent } from "./button/button.component";
 
 @Component({
   selector: "app-root",
@@ -14,11 +22,16 @@ export class AppComponent implements OnInit, AfterViewInit {
       label: "primary",
     },
     {
+      color: ButtonColor.secondary,
       label: "secondary",
     },
   ];
 
-  constructor(private el: ElementRef) {}
+  @ViewChildren(ButtonComponent) items: QueryList<ButtonComponent>;
+
+  constructor(private el: ElementRef) {
+    this.items = new QueryList();
+  }
 
   ngOnInit(): void {}
 
@@ -27,12 +40,25 @@ export class AppComponent implements OnInit, AfterViewInit {
   }
 
   private test() {
-    const appButtons = this.el.nativeElement.querySelectorAll("app-button");
+    const appButtons =
+      this.el.nativeElement.querySelectorAll("app-button[color]");
     console.log(
       "%cCheck!",
       "font-size: 100px; color: blue; font-weight: bold",
       appButtons
     );
+
+    console.log("items", this.items);
+
+    // this.items.forEach((item) => {
+    //   if (!item.buttonConfig?.color) {
+    //     item..removeAttribute("color");
+    //   }
+    // });
+
+    // console.log("buttonComponent", this.buttonComponent);
+
+    // this.buttonComponent.nativ;
 
     appButtons.forEach((appButton: Node) => {
       console.log("appButton", appButton);
