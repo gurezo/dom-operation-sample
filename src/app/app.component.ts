@@ -49,25 +49,8 @@ export class AppComponent implements OnInit, AfterViewInit {
     );
 
     console.log("items", this.items);
-
-    // this.items.forEach((item) => {
-    //   if (!item.buttonConfig?.color) {
-    //     item..removeAttribute("color");
-    //   }
-    // });
-
-    // console.log("buttonComponent", this.buttonComponent);
-
-    // this.buttonComponent.nativ;
-
     appButtons.forEach((appButton: Node) => {
       console.log("appButton", appButton);
-
-      // if (!appButton.buttonConfig?.color) {
-      //   // appButton.ATTRIB
-      //   // appButton.removeAttribute("color");
-      // }
     });
-    // this.buttonConfig.forEach((item) => {});
   }
 }

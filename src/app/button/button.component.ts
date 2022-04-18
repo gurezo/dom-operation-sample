@@ -7,7 +7,6 @@ import { ButtonColor, ButtonConfig } from "../button.model";
   styleUrls: ["./button.component.scss"],
   host: {
     "[class.primary]": "color === primary",
-    // "[class.primary]": "true",
     "[class.secondrary]": "color === secondrary",
   },
 })
